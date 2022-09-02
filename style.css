@@ -20,8 +20,8 @@ header li.nav-item {
     color: black
 }
 
-.border-up {
-    border-top: 3px solid #aaa;
+.border-down {
+    border-bottom: 3px solid #aaa;
 }
 
 .card-body p {
@@ -51,13 +51,25 @@ header li.nav-item {
 }
 
 .single-news {
-    border: 2px solid #333;
-    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-color: #fff !important;
 
+}
+
+.card {
+    background-color: #e3f2fd;
+    border: none;
 }
 
 .single-news img {
     height: 100%;
     position: center center;
 
+}
+
+.modal-box {
+    width: 1200px;
+    margin-left: -350px;
 }
