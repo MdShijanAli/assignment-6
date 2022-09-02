@@ -49,7 +49,7 @@ const displayNews = categories => {
         createSingleNews.innerHTML = `
       <div class="row g-0 m-3 rounded">
          <div class="col-md-3">
-            <img src="${category.thumbnail_url}" class="img-fluid rounded" alt="...">
+            <img src="${category.image_url}" class="img-fluid rounded" alt="...">
          </div>
          <div class="col-md-9 ">
              <div class="card-body">
@@ -112,10 +112,35 @@ const displayNewsDetails = categories => {
         newsTitle.innerText = category.title;
         const newsDetails = document.getElementById('news-details');
         newsDetails.innerHTML = `
-         <h5 class="fw-bold">${category.title}</h5>
+        <img src=${category.image_url} class="mb-3"/>
+        <h3>${category.title}</h3>
+        <p>${category.details}</p>
        
 
-        <h5 class="fw-bold">Others:</h5>
+        <div class="card-bottom d-flex align-items-center justify-content-between">
+                  <div class="d-flex ">
+                          <img class=w-100"" src="${category.author.img}" alt="">
+                          <div class="author">
+                              <h6>${category.author.name}</h6>
+                              <p>${category.author.published_date} </p>
+                          </div>
+                  </div>
+ 
+                  <div>
+                          <h5><i class="fa-regular fa-eye"></i> ${category.total_view}</h5>
+                  </div>
+                  <div>
+                           <i class="fa-solid fa-star-half-stroke"></i>
+                           <i class="fa-regular fa-star"></i>
+                           <i class="fa-regular fa-star"></i>
+                           <i class="fa-regular fa-star"></i>
+                           <i class="fa-regular fa-star"></i>
+                           
+                  </div>
+ 
+                 
+ 
+          </div>
     
 
     
