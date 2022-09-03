@@ -113,7 +113,7 @@ const displayNews = allnews => {
                          
                             <div class="d-flex ">
                                   <div>
-                                     <img src="${news.author.img}" alt="">
+                                     <img src="${news.author ? news.author.img : 'No Image'}" alt="">
                                   </div>
 
                                   <div class="author">
@@ -189,7 +189,7 @@ const displayNewsDetails = categories => {
     
             <div class="card-bottom d-flex align-items-center justify-content-between">
                       <div class="d-flex ">
-                              <img  src="${category.author.img}" alt="">
+                              <img  src="${category.author ? category.author.img : 'No Image'}" alt="">
                               <div class="author">
                                   <h6>${category.author ? category.author.name : 'No Data Found'}</h6>
                                   <p>${category.author ? category.author.published_date : 'No Data Fpund'} </p>
@@ -197,7 +197,7 @@ const displayNewsDetails = categories => {
                       </div>
      
                       <div>
-                              <h5><i class="fa-regular fa-eye"></i> ${category.total_view}</h5>
+                              <h5><i class="fa-regular fa-eye"></i> ${category.total_view ? category.total_view : '0'}M</h5>
                       </div>
                       <div>
                                <i class="fa-solid fa-star-half-stroke"></i>
