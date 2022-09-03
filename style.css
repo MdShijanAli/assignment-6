@@ -74,8 +74,9 @@ header li.nav-item {
 }
 
 .modal-box {
-    width: 1200px;
-    margin-left: -350px;
+    /* width: 1200px; */
+    width: 100%;
+    /* margin-left: -350px; */
 }
 
 .card-text {
