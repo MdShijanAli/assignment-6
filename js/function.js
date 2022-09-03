@@ -20,11 +20,13 @@ const singleCategory = categories => {
          `;
         categoriesContainer.appendChild(createCategory);
     });
+
 }
 
 
 const loadNews = async category_id => {
     // console.log(id);
+    toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     // console.log(url);
     const res = await fetch(url);
@@ -36,8 +38,10 @@ const loadNews = async category_id => {
 
 const displayNews = categories => {
 
+
+
     categories.forEach(category => {
-        // console.log(category);
+        console.log(category);
 
 
 
@@ -53,7 +57,7 @@ const displayNews = categories => {
          </div>
          <div class="col-md-9 ">
              <div class="card-body">
-                <h3 class="card-title fw-bold">${category.title}</h3>
+                <h3 class="card-title fw-bold">${category ? category.title : 'No Data Found'}</h3>
                 <p class="card-text">${category.details.slice(0, 1000)}</p>
  
               </div>
@@ -61,8 +65,8 @@ const displayNews = categories => {
                   <div class="d-flex ">
                           <img src="${category.author.img}" alt="">
                           <div class="author">
-                              <h6>${category.author.name}</h6>
-                              <p>${category.author.published_date} </p>
+                              <h6>${category.author ? category.author.name : 'No Data Found'}</h6>
+                              <p>${category.author ? category.author.published_date : 'No Data Found'} </p>
                           </div>
                   </div>
  
@@ -90,11 +94,13 @@ const displayNews = categories => {
         newsContainer.appendChild(createSingleNews);
 
     })
+    toggleSpinner(false);
 
 }
 
 
 const loadDetails = async _id => {
+
     const url = `https://openapi.programming-hero.com/api/news/${_id}`;
     console.log(url);
     const res = await fetch(url);
@@ -121,8 +127,8 @@ const displayNewsDetails = categories => {
                   <div class="d-flex ">
                           <img class=w-100"" src="${category.author.img}" alt="">
                           <div class="author">
-                              <h6>${category.author.name}</h6>
-                              <p>${category.author.published_date} </p>
+                              <h6>${category.author ? category.author.name : 'No Data Found'}</h6>
+                              <p>${category.author ? category.author.published_date : 'No Data Fpund'} </p>
                           </div>
                   </div>
  
@@ -149,6 +155,19 @@ const displayNewsDetails = categories => {
 
 
 
+}
+
+
+
+const toggleSpinner = isLoading => {
+    const loaderSection = document.getElementById('loader');
+    if (isLoading) {
+        loaderSection.classList.remove('d-none');
+    }
+    else {
+        loaderSection.classList.add('d-none');
+
+    }
 }
 
 
