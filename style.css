@@ -55,7 +55,7 @@ header li.nav-item {
     border-radius: 10px;
     margin-bottom: 30px;
     background-color: #fff !important;
-
+    ;
 }
 
 .card {
@@ -72,4 +72,124 @@ header li.nav-item {
 .modal-box {
     width: 1200px;
     margin-left: -350px;
+}
+
+.card-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+
+
+
+.card-text {
+    text-overflow: ellipsis;
+
+    white-space: wrap;
+    overflow: hidden;
+
+    /* max-width: 90%; */
+    height: 200px;
+    position: relative;
+    /* padding: 1rem; */
+    /* padding-right: 110px; */
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.card-text::before {
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    line-height: 1.5rem;
+    /* height: 100px; */
+    content: '...';
+    cursor: pointer;
+}
+
+
+
+
+
+/* responsive section */
+
+
+
+
+@media (max-width: 768px) {
+
+    .card-body p {
+        font-size: 16px;
+        color: #aaa;
+    }
+
+    .card-bottom i {
+        font-size: 15px;
+    }
+
+    .card-bottom h5 {
+        font-size: 15px;
+    }
+
+    .card-bottom h6 {
+        font-size: 15px;
+    }
+
+    .card-bottom p {
+        font-size: 15px;
+    }
+
+
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+
+        justify-content: flex-end;
+
+
+    }
+
+    li.nav-item {
+        margin-right: 10px;
+    }
+
+    .nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    /*  .nav li {
+        display: block;
+        width: 100%;
+    } */
+
+    .nav li a {
+        font-size: 18px;
+        border: 1px solid #ddd;
+        display: block;
+        background-color: lightseagreen;
+        padding: 5px;
+        width: 100%;
+        margin-bottom: 5px;
+
+
+    }
+
+    #categories {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+
+    }
+
+
+    .modal-box {
+        width: 100%;
+        margin-left: 0;
+
+    }
 }

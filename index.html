@@ -48,10 +48,7 @@
 
         <section class="sub-header container">
             <div id="categories" class="justify-content-between d-flex my-3" style="background-color: #e3f2fd;">
-                <!-- <div class="category container border-up">
 
-
-                </div> -->
             </div>
         </section>
     </header>
@@ -63,7 +60,37 @@
 
         <section>
             <div class="container bg-white p-3 my-5 rounded">
-                <h5 class="text-left"><span>4</span> items found for category Entertainment</h5>
+                <h5 class="text-left"><span id="shownumber">0</span> items found in this category <span
+                        id="categoryName"></span></h5>
+            </div>
+        </section>
+
+
+        <section class="container">
+            <div class="d-flex gap-2 justify-content-between">
+                <div class="d-flex gap-2">
+                    <div class="">
+                        <h5>Sort By View:</h5>
+                    </div>
+                    <div class="">
+                        <select id="news">
+                            <option value="select">Select</option>
+                            <option id="highest-view" value="high">Highest View</option>
+                            <option value="low">Lowest View</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <div class="">
+                        <button type="button" class="btn btn-primary">Today's Pick</button>
+                    </div>
+                    <div class="">
+                        <button type="button" class="btn btn-outline-primary">Trending</button>
+
+                    </div>
+                </div>
             </div>
         </section>
 

@@ -7,9 +7,12 @@ const allCategory = () => {
 
 const singleCategory = categories => {
     // console.log(categories);
+
     categories.forEach(category => {
 
-        // console.log(category)
+
+
+        // console.log(category.category_name);
         const categoriesContainer = document.getElementById('categories');
         const createCategory = document.createElement('ul');
         createCategory.classList.add('nav');
@@ -19,12 +22,24 @@ const singleCategory = categories => {
          
          `;
         categoriesContainer.appendChild(createCategory);
+
+
     });
 
 }
 
 
+/* const showName = document.getElementById('categoryName');
+showName.innerText = category.category_name; */
+
+
+
+
+
+
 const loadNews = async category_id => {
+
+    // console.log(this.innerText);
     // console.log(id);
     toggleSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
@@ -32,11 +47,28 @@ const loadNews = async category_id => {
     const res = await fetch(url);
     const data = await res.json();
     displayNews(data.data);
+
+
+
+
+
 }
 
 
 
 const displayNews = allnews => {
+
+
+
+
+    // console.log(allnews.category_name);
+
+    const showNumber = document.getElementById('shownumber');
+    showNumber.innerText = allnews.length;
+
+
+    /* const showName = document.getElementById('categoryName');
+    showName.innerText = category_name; */
 
 
     const newsContainer = document.getElementById('news-container');
@@ -45,10 +77,7 @@ const displayNews = allnews => {
     allnews.forEach(news => {
         console.log(news);
 
-        let i = 0; i < news.length; i++;
-        // console.log(selectedArray[i].playerName);
-        const name = news[i];
-        console.log(name);
+
 
 
 
@@ -58,27 +87,32 @@ const displayNews = allnews => {
         createSingleNews.classList.add('single-news');
         createSingleNews.innerHTML = `
               <div class="row g-0 m-3 rounded">
-                 <div class="col-md-3">
-                    <img src="${news.image_url}" class="img-fluid rounded" alt="...">
+                 <div class="col-md-12 col-lg-3">
+                    <img src="${news.image_url}" class="img-fluid rounded h-100" alt="...">
                  </div>
-                 <div class="col-md-9 ">
+                 <div class="col-md-12 col-lg-9">
                      <div class="card-body">
                         <h3 class="card-title fw-bold">${news ? news.title : 'No Data Found'}</h3>
-                        <p class="card-text">${news.details.slice(0, 1000)}</p>
+                        <p class="card-text">${news.details}</p>
          
                       </div>
-                  <div class="card-bottom d-flex align-items-center justify-content-between">
-                          <div class="d-flex ">
-                                  <img src="${news.author.img}" alt="">
-                                  <div class="author">
-                                      <h6>${news.author ? news.author.name : 'No Data Found'}</h6>
-                                      <p>${news.author ? news.author.published_date : 'No Data Found'} </p>
+                     <div class="card-bottom d-flex align-items-center justify-content-between">
+                         
+                            <div class="d-flex ">
+                                  <div>
+                                     <img src="${news.author.img}" alt="">
                                   </div>
-                          </div>
-         
-                          <div>
-                                  <h5><i class="fa-regular fa-eye"></i> ${news.total_view}</h5>
-                          </div>
+
+                                  <div class="author">
+                                     <h6>${news.author ? news.author.name : 'No Data Found'}</h6>
+                                     <p>${news.author ? news.author.published_date : 'No Data Found'} </p>
+                                  </div>
+                            </div>
+ 
+                            <div>
+                                   <h5 id="viewList"><i class="fa-regular fa-eye"></i> ${news.total_view ? news.total_view : '0'}</h5>
+                            </div>
+                          
                           <div>
                                    <i class="fa-solid fa-star-half-stroke"></i>
                                    <i class="fa-regular fa-star"></i>
@@ -178,14 +212,31 @@ const toggleSpinner = isLoading => {
 
 
 
-const newsArray = [];
+document.getElementById('highest-view').addEventListener('keydown', function () {
+    console.log('thik ache kaj kortesA');
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 allCategory();
 
-const showNewsLength = () => {
 
-}
 
 // loadCategory('01');
 
