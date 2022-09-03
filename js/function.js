@@ -20,7 +20,7 @@ const singleCategory = categories => {
 
 
 
-        // console.log(category.category_name);
+
         try {
             const categoriesContainer = document.getElementById('categories');
             const createCategory = document.createElement('ul');
@@ -42,9 +42,6 @@ const singleCategory = categories => {
 }
 
 
-/* const showName = document.getElementById('categoryName');
-showName.innerText = category.category_name; */
-
 
 
 
@@ -52,8 +49,7 @@ showName.innerText = category.category_name; */
 
 const loadNews = async category_id => {
 
-    // console.log(this.innerText);
-    // console.log(id);
+
     try {
         toggleSpinner(true);
         const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;

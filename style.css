@@ -88,7 +88,7 @@ header li.nav-item {
 
 
 .card-text {
-    /* text-overflow: ellipsis; */
+
 
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -98,33 +98,9 @@ header li.nav-item {
 
     overflow: hidden;
 
-
-    /*   display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical; */
-
-
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-
-    /* max-width: 90%; */
-    /* height: 200px; */
-    /* position: relative; */
-    /* padding: 1rem; */
-    /* padding-right: 110px; */
-    /* font-size: 1rem;
-    line-height: 1.5rem; */
 }
 
-.card-text::before {
-    position: absolute;
-    right: 0;
-    bottom: 1rem;
-    line-height: 1.5rem;
-    /* height: 100px; */
-    content: '...';
-    cursor: pointer;
-}
+
 
 
 
@@ -180,10 +156,6 @@ header li.nav-item {
 
     }
 
-    /*  .nav li {
-        display: block;
-        width: 100%;
-    } */
 
     .nav li a {
         font-size: 18px;
