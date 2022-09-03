@@ -77,6 +77,15 @@ const loadNews = async category_id => {
 const displayNews = allnews => {
 
 
+    const sortFind = allnews.sort((x, y) => {
+        if (x.total_view < y.total_view) {
+            return 1;
+        }
+        else {
+            return -1;
+        }
+    })
+
 
 
 
@@ -118,7 +127,7 @@ const displayNews = allnews => {
                             </div>
  
                             <div>
-                                   <h5 id="viewList"><i class="fa-regular fa-eye"></i> ${news.total_view ? news.total_view : '0'}</h5>
+                                   <h5 id="viewList"><i class="fa-regular fa-eye"></i> ${news.total_view ? news.total_view : '0'}M</h5>
                             </div>
                           
                           <div>
@@ -239,25 +248,13 @@ const toggleSpinner = isLoading => {
 
 
 
-document.getElementById('highest-view').addEventListener('keydown', function () {
-    console.log('thik ache kaj kortesA');
-})
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+loadNews('08')
 
 
 
